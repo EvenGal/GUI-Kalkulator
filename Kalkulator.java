@@ -43,6 +43,9 @@ public class Kalkulator{
 
         btn0.setSize(100, 50);
         btn0.setLocation(250, 390);
+        
+        btn1.setSize(100, 50);
+        btn1.setLocation();
 
         
         //Tall
