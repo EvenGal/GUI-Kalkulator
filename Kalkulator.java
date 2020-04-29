@@ -27,6 +27,7 @@ public class Kalkulator{
     private JButton btnMulti = new JButton("*");
     private JButton btnAdd = new JButton("+");
     private JButton btnSub = new JButton("-");
+    private JButton btnSqr = new JButton("\u221A"); //Kvadratrot
 
 
     public Kalkulator(){
@@ -42,11 +43,49 @@ public class Kalkulator{
         txtScreen.setEditable(false);
 
         btn0.setSize(100, 50);
-        btn0.setLocation(250, 390);
+        btn0.setLocation(250, 450);
         
         btn1.setSize(100, 50);
-        btn1.setLocation();
+        btn1.setLocation(250, 400);
 
+        btn2.setSize(100, 50);
+        btn2.setLocation(250, 350);
+
+        btn3.setSize(100, 50);
+        btn3.setLocation(250, 300);
+
+        btn4.setSize(100, 50);
+        btn4.setLocation(250, 250);
+
+        btn5.setSize(100, 50);
+        btn5.setLocation(150, 450);
+
+        btn6.setSize(100, 50);
+        btn6.setLocation(150, 400);
+
+        btn7.setSize(100, 50);
+        btn7.setLocation(150, 350);
+
+        btn8.setSize(100, 50);
+        btn8.setLocation(150, 300);
+
+        btn9.setSize(100, 50);
+        btn9.setLocation(150, 250);
+
+        btnAdd.setSize(100, 50);
+        btnAdd.setLocation(50, 450);
+
+        btnSub.setSize(100, 50);
+        btnSub.setLocation(50, 400);
+
+        btnMulti.setSize(100, 50);
+        btnMulti.setLocation(50, 350);
+
+        btnDivide.setSize(100, 50);
+        btnDivide.setLocation(50, 300);
+
+        btnSqr.setSize(100, 50);
+        btnSqr.setLocation(50, 250);
         
         //Tall
         frame.add(txtScreen);
@@ -66,7 +105,7 @@ public class Kalkulator{
         frame.add(btnMulti);
         frame.add(btnAdd);
         frame.add(btnSub);
-
+        frame.add(btnSqr);
     
     }
 
