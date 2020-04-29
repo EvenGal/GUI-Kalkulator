@@ -2,7 +2,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 
-
+//Enkel kalkulator GUI
 
 public class Kalkulator{
 
