@@ -1,15 +1,29 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 
 //Enkel kalkulator GUI
 
-public class Kalkulator{
+public class Kalkulator {
 
     private JFrame frame = new JFrame("Calculator");
     private JTextArea txtScreen = new JTextArea();
 
-    //Nummere
+    //Kalkulasjoner
+
+    String strnum1 = "";
+    String strnum2 = "";
+    String[] statement;
+    int num1 = 0;
+    int num2 = 0;
+    String strtotal;
+
+    
+
+    // Nummere
     private JButton btn0 = new JButton("0");
     private JButton btn1 = new JButton("1");
     private JButton btn2 = new JButton("2");
@@ -20,31 +34,168 @@ public class Kalkulator{
     private JButton btn7 = new JButton("7");
     private JButton btn8 = new JButton("8");
     private JButton btn9 = new JButton("9");
-    
-    //Operasjoner
+
+    // Operasjoner
 
     private JButton btnDivide = new JButton("/");
     private JButton btnMulti = new JButton("*");
     private JButton btnAdd = new JButton("+");
     private JButton btnSub = new JButton("-");
-    private JButton btnSqr = new JButton("\u221A"); //Kvadratrot
+    private JButton btnSqr = new JButton("\u221A"); // Kvadratrot
+    private JButton btnEqual = new JButton("=");
 
-
-    public Kalkulator(){
+    public Kalkulator() {
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         frame.setSize(400, 550);
         frame.setResizable(false);
         frame.setLayout(null);
-        
+
         txtScreen.setSize(380, 100);
         txtScreen.setLocation(7, 5);
         txtScreen.setEditable(false);
 
+        
+        //Faar de paa skjermen
+        
+        btn0.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtScreen.append("0");
+
+            }
+        });
+
+        btn1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtScreen.append("1");
+
+            }
+        });
+        
+        btn2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtScreen.append("2");
+
+            }
+        });
+
+        btn3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtScreen.append("3");
+
+            }
+        });
+
+        btn4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtScreen.append("4");
+
+            }
+        });
+
+        btn5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtScreen.append("5");
+
+            }
+        });
+
+        btn6.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtScreen.append("6");
+
+            }
+        });
+
+        btn7.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtScreen.append("7");
+
+            }
+        });
+
+
+        btn8.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtScreen.append("8");
+
+            }
+        });
+
+
+        btn9.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtScreen.append("9");
+
+            }
+        });
+
+
+        btnDivide.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtScreen.append("/");
+
+            }
+        });
+
+
+        btnMulti.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtScreen.append("*");
+
+            }
+        });
+
+        btnAdd.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtScreen.append("+");
+
+            }
+        });
+
+        btnSub.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtScreen.append("-");
+
+            }
+        });
+
+        btnEqual.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtScreen.append("-");
+
+            }
+        });
+
+        
+
+        btnSqr.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtScreen.append("\u221A");
+
+            }
+        });
+
         btn0.setSize(100, 50);
         btn0.setLocation(250, 450);
-        
+
         btn1.setSize(100, 50);
         btn1.setLocation(250, 400);
 
@@ -86,6 +237,9 @@ public class Kalkulator{
 
         btnSqr.setSize(100, 50);
         btnSqr.setLocation(50, 250);
+
+        btnEqual.setSize(100, 50);
+        btnEqual.setLocation(150, 200);
         
         //Tall
         frame.add(txtScreen);
@@ -106,6 +260,7 @@ public class Kalkulator{
         frame.add(btnAdd);
         frame.add(btnSub);
         frame.add(btnSqr);
+        frame.add(btnEqual);
     
     }
 
