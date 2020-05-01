@@ -58,7 +58,7 @@ public class Kalkulator {
 
         
         //Faar de paa skjermen
-        
+
         btn0.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -178,7 +178,7 @@ public class Kalkulator {
         btnEqual.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                txtScreen.append("-");
+                txtScreen.append("=");
 
             }
         });
