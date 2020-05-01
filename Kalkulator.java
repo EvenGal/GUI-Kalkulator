@@ -1,6 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.lang.Math;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
@@ -19,7 +19,8 @@ public class Kalkulator {
     String[] statement;
     int num1 = 0;
     int num2 = 0;
-    String strtotal;
+    String strtotal = "";
+    int totalVal = 0;
 
     
 
@@ -41,7 +42,6 @@ public class Kalkulator {
     private JButton btnMulti = new JButton("*");
     private JButton btnAdd = new JButton("+");
     private JButton btnSub = new JButton("-");
-    private JButton btnSqr = new JButton("\u221A"); // Kvadratrot
     private JButton btnEqual = new JButton("=");
 
     public Kalkulator() {
@@ -178,20 +178,65 @@ public class Kalkulator {
         btnEqual.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                txtScreen.append("=");
+                
+                if(txtScreen.getText().contains("+")){
+                    statement = txtScreen.getText().split("\\+");
+                    strnum1 = statement[0];
+                    strnum2 = statement[1];
+                    num1 = Integer.parseInt(strnum1);
+                    num2 = Integer.parseInt(strnum2);
 
+                    totalVal = num1 + num2;
+
+                    strtotal = Integer.toString(totalVal);
+
+                    txtScreen.setText(strtotal);
+                
+                }else if(txtScreen.getText().contains("-")){
+                    statement = txtScreen.getText().split("\\-");
+                    strnum1 = statement[0];
+                    strnum2 = statement[1];
+                    num1 = Integer.parseInt(strnum1);
+                    num2 = Integer.parseInt(strnum2);
+
+                    totalVal = num1 - num2;
+
+                    strtotal = Integer.toString(totalVal);
+
+                    txtScreen.setText(strtotal);
+                
+                }else if(txtScreen.getText().contains("*")){
+                    statement = txtScreen.getText().split("\\*");
+                    strnum1 = statement[0];
+                    strnum2 = statement[1];
+                    num1 = Integer.parseInt(strnum1);
+                    num2 = Integer.parseInt(strnum2);
+
+                    totalVal = num1 * num2;
+
+                    strtotal = Integer.toString(totalVal);
+
+                    txtScreen.setText(strtotal);
+
+                }else if(txtScreen.getText().contains("/")){
+                    statement = txtScreen.getText().split("\\/");
+                    strnum1 = statement[0];
+                    strnum2 = statement[1];
+                    num1 = Integer.parseInt(strnum1);
+                    num2 = Integer.parseInt(strnum2);
+
+                    totalVal = num1 / num2;
+
+                    strtotal = Integer.toString(totalVal);
+
+                    txtScreen.setText(strtotal);
             }
+        }
+
         });
 
         
 
-        btnSqr.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                txtScreen.append("\u221A");
-
-            }
-        });
 
         btn0.setSize(100, 50);
         btn0.setLocation(250, 450);
@@ -235,11 +280,9 @@ public class Kalkulator {
         btnDivide.setSize(100, 50);
         btnDivide.setLocation(50, 300);
 
-        btnSqr.setSize(100, 50);
-        btnSqr.setLocation(50, 250);
 
         btnEqual.setSize(100, 50);
-        btnEqual.setLocation(150, 200);
+        btnEqual.setLocation(50, 250);
         
         //Tall
         frame.add(txtScreen);
@@ -259,7 +302,6 @@ public class Kalkulator {
         frame.add(btnMulti);
         frame.add(btnAdd);
         frame.add(btnSub);
-        frame.add(btnSqr);
         frame.add(btnEqual);
     
     }
