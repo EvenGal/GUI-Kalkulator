@@ -1,3 +1,3 @@
--Start på en GUI kalkulator i Java
+GUI Kalkulator
+- Veldig enkel kalkulator!
 
--Ikke ferdig!
