@@ -43,21 +43,21 @@ public class Kalkulator {
     private JButton btnAdd = new JButton("+");
     private JButton btnSub = new JButton("-");
     private JButton btnEqual = new JButton("=");
-
+    //Const
     public Kalkulator() {
-
+        //Setter en frame
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         frame.setSize(400, 550);
         frame.setResizable(false);
         frame.setLayout(null);
-
+        //Txtscreen i framen
         txtScreen.setSize(380, 100);
         txtScreen.setLocation(7, 5);
         txtScreen.setEditable(false);
 
         
-        //Faar de paa skjermen
+        //"Animasjoner"
 
         btn0.addActionListener(new ActionListener() {
             @Override
@@ -237,7 +237,7 @@ public class Kalkulator {
 
         
 
-
+        //Her setter jeg size og location paa knappene
         btn0.setSize(100, 50);
         btn0.setLocation(250, 450);
 
@@ -284,7 +284,7 @@ public class Kalkulator {
         btnEqual.setSize(100, 50);
         btnEqual.setLocation(50, 250);
         
-        //Tall
+        //Adder alt til framen
         frame.add(txtScreen);
         frame.add(btn0);
         frame.add(btn1);
@@ -307,7 +307,7 @@ public class Kalkulator {
     }
 
     public static void main(String[] args) {
-
+        //Nytt kalkulator objekt
         new Kalkulator();
     }
 
