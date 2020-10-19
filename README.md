@@ -1,3 +1,4 @@
 GUI Kalkulator
-- Veldig enkel kalkulator!
+
+-Veldig enkel kalkulator!
 
