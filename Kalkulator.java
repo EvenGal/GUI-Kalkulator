@@ -1,6 +1,5 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.Math;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
@@ -43,6 +42,7 @@ public class Kalkulator {
     private JButton btnAdd = new JButton("+");
     private JButton btnSub = new JButton("-");
     private JButton btnEqual = new JButton("=");
+    private JButton btnClear = new JButton("C");
 
     public Kalkulator() {
 
@@ -175,6 +175,13 @@ public class Kalkulator {
             }
         });
 
+        btnClear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtScreen.setText(null);
+            }
+        });
+
         btnEqual.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -232,8 +239,8 @@ public class Kalkulator {
                     txtScreen.setText(strtotal);
             }
         }
-
-        });
+        
+    });
 
         
 
@@ -283,6 +290,9 @@ public class Kalkulator {
 
         btnEqual.setSize(100, 50);
         btnEqual.setLocation(50, 250);
+
+        btnClear.setSize(100, 50);
+        btnClear.setLocation(50, 200);
         
         //Tall
         frame.add(txtScreen);
@@ -303,6 +313,7 @@ public class Kalkulator {
         frame.add(btnAdd);
         frame.add(btnSub);
         frame.add(btnEqual);
+        frame.add(btnClear);
     
     }
 
