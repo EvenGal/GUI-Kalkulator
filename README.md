@@ -1,4 +1,4 @@
 GUI Kalkulator
 
--Veldig enkel kalkulator!
+-Javac Kalkulator.java for å kompilere
 
