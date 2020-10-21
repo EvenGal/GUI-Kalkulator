@@ -1,8 +1,10 @@
+import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
+import java.math.*;
 
 //Enkel kalkulator GUI
 
@@ -11,7 +13,7 @@ public class Kalkulator {
     private JFrame frame = new JFrame("Calculator");
     private JTextArea txtScreen = new JTextArea();
 
-    //Kalkulasjoner
+    // Kalkulasjoner
 
     String strnum1 = "";
     String strnum2 = "";
@@ -20,8 +22,6 @@ public class Kalkulator {
     int num2 = 0;
     String strtotal = "";
     int totalVal = 0;
-
-    
 
     // Nummere
     private JButton btn0 = new JButton("0");
@@ -43,11 +43,11 @@ public class Kalkulator {
     private JButton btnSub = new JButton("-");
     private JButton btnEqual = new JButton("=");
     private JButton btnClear = new JButton("C");
+    private JButton btnSqrt = new JButton("√");
 
-
-    //Const
+    // Const
     public Kalkulator() {
-        //Setter en frame
+        // Setter en frame
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         frame.setSize(400, 550);
@@ -59,7 +59,7 @@ public class Kalkulator {
         txtScreen.setEditable(false);
 
         
-        //"Animasjoner"
+        //Utregning av gitte tall
 
         btn0.addActionListener(new ActionListener() {
             @Override
@@ -184,6 +184,13 @@ public class Kalkulator {
             }
         });
 
+        btnSqrt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtScreen.append("√");
+            }
+        });
+
         btnEqual.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -239,6 +246,16 @@ public class Kalkulator {
                     strtotal = Integer.toString(totalVal);
 
                     txtScreen.setText(strtotal);
+                    
+            }else if(txtScreen.getText().contains("√")){
+                statement = txtScreen.getText().split("\\√");
+                Double number = Double.parseDouble(statement[0]);
+                
+                Double totalVal1 = Math.sqrt(number);
+                
+                strtotal = Double.toString(totalVal1);
+                
+                txtScreen.setText(strtotal);
             }
         }
         
@@ -295,6 +312,9 @@ public class Kalkulator {
 
         btnClear.setSize(100, 50);
         btnClear.setLocation(50, 200);
+
+        btnSqrt.setSize(100, 50);
+        btnSqrt.setLocation(150, 200);
         
         //Adder alt til framen
         frame.add(txtScreen);
@@ -316,6 +336,7 @@ public class Kalkulator {
         frame.add(btnSub);
         frame.add(btnEqual);
         frame.add(btnClear);
+        frame.add(btnSqrt);
     
     }
 
