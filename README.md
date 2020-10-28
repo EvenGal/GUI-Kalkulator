@@ -1,5 +1,5 @@
 GUI Kalkulator
 
 -Creator: EvenGal
--Javac Kalkulator.java for å kompilere
+-Javac *.java for å kompilere
 
